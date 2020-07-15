@@ -1,0 +1,30 @@
+{
+  "name": "hello-postgre",
+  "version": "1.0.0",
+  "description": "Una API usando PostgreSQL como base de datos.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagotrini/hello-postgre.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/santiagotrini/hello-postgre/issues"
+  },
+  "homepage": "https://github.com/santiagotrini/hello-postgre#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
