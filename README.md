@@ -236,8 +236,15 @@ Y listo, API terminada, pueden verla funcionando en [http://hello-postgre.heroku
 
 ## ¿Y ahora?
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Ahora podemos dejar de lado las bases de datos y explorar las posibilidades de los WebSockets haciendo una simple app de chat en [hello-websockets](https://github.com/santiagotrini/hello-websockets).
+
+También podemos continuar con el stack MERN en [hello-crud](https://github.com/santiagotrini/hello-crud).
 
 ## Guías, referencias y documentación
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Las fuentes de esta guía (en inglés) y otros links útiles.
+
+- La [documentación oficial](https://www.postgresql.org/docs/current/app-psql.html) de `psql`, la _shell_ de PostgreSQL.
+- La [guía oficial](https://node-postgres.com/features/queries) del paquete `pg`.
+- La [guía introductoria de Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#provision-a-database) para aplicaciones de NodeJS donde se muestra como utilizar el _plugin_ provisto por Heroku de PostgreSQL.
+- Curso básico de SQL en [Khan Academy](https://es.khanacademy.org/computing/computer-programming/sql).
