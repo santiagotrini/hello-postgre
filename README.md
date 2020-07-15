@@ -188,7 +188,51 @@ Y con eso terminamos la versión local de la API. Ahora hay que subir esto a Her
 
 ## Creando la app desde la CLI de Heroku
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lo primero es chequear que tengamos la CLI de Heroku instalada correctamente. Todos los comandos que siguen los hacemos desde la carpeta del proyecto.
+
+```console
+$ heroku -v
+heroku/7.41.1 ...
+```
+
+Primero nos logeamos a Heroku desde la CLI.
+
+```console
+$ heroku login
+heroku: Press any key to open up the browser to login or q to exit:
+Opening browser to https://cli-auth.heroku.com/...
+Logging in... done
+Logged in as ...
+```
+
+Tocamos alguna tecla para abrir el navegador web y nos logeamos. Creamos la app con `heroku create nombre-de-la-app`. Después de crear la app chequeamos que se haya creado un _remote_ de Git llamado `heroku`.
+
+```console
+$ heroku create hello-postgre
+$ git remote -v
+heroku	https://git.heroku.com/hello-postgre.git (fetch)
+heroku	https://git.heroku.com/hello-postgre.git (push)
+```
+
+Ahora pusheamos nuestro código a ese remoto, si todavía no commitearon los cambios es un buen momento.
+
+```console
+$ git push heroku master
+```
+
+Pero por ahora va a dar error cuando quiera conectarse a la base de datos, porque no hay ninguna. La podemos crear desde la CLI. Para el segundo comando tenemos que tener instalado Postgre localmente en nuestra computadora.
+
+```console
+$ heroku addons:create heroku-postgresql:hobby-dev
+$ heroku pg:psql < populatedb.sql
+$ heroku ps:restart web
+```
+
+El primer comando agrega una base de datos de PostgreSQL directamente hosteada en Heroku con el plan `hobby-dev`, osea gratis.
+El segundo comando ejecuta el _script_ `populatedb.sql` en esta base de datos.
+El tercer comando solo restartea la app en Heroku por si había crasheado y se había quedado colgada.
+
+Y listo, API terminada, pueden verla funcionando en [http://hello-postgre.herokuapp.com/api/users](http://hello-postgre.herokuapp.com/api/users) o en la terminal con `heroku open` cuando terminen la suya.
 
 ## ¿Y ahora?
 
