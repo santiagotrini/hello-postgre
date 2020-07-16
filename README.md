@@ -17,11 +17,21 @@ Para este ejemplo necesitamos lo mismo que en `express-hello-world` y dos cosas 
 - La CLI de Heroku, la pueden bajar [acá](https://devcenter.heroku.com/articles/heroku-cli).
 - El server de PostgreSQL instalado en nuestra computadora (para probar localmente). Lo consiguen en el [sitio oficial](https://www.postgresql.org/download/).
 
+Los pasos para chequear que ande todo antes de arrancar van a ser distintos en funcion del sistema operativo.
+Asumo que tienen Windows 10. Cuando ejecuten el instalador de Postgre pueden destildar las _checkboxes_ 2 y 3 de los componentes que van a instalar, solo necesitamos el server y las herramientas de linea de comandos. Tienen que elegir un password para el usuario `postgres`, recuerdenlo.
 
+Cuando terminan de instalar abran una terminal para logearse por primera vez a la shell de Postgre. Vamos a crear un usuario para nuestra base de datos.
 
 ```console
-$ psql -d hellodb
+$ psql -U postgres
+postgres=# CREATE USER usuario WITH PASSWORD 'password' SUPERUSER;
+postgres=# \q
+$ createdb -U usuario hellodb
+$ psql -U usuario -d hellodb
+hellodb=# \q   
 ```
+
+Reemplacen `usuario` por el nombre de usuario que quieran y `password` por alguna contrasea que recuerden. Ojo con las comillas simples en `password`, el password va dentro de las comillas. Ya tenemos la base de datos pero todavia no tiene ninguna tabla con los datos de los usuarios. 
 
 ## Creando el proyecto
 
